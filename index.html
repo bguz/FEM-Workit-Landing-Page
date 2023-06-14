@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+  <!-- external CSS link -->
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | Workit landing page</title>
@@ -11,16 +16,20 @@
 <body>
 
   <header class="hero">
-    <nav class="hero__nav">
-      <a href="#"><img src="assets/images/logo-light.svg" alt="Workit Logo" class="hero__logo"></a>
-      <a href="#">Apply for access</a>
-    </nav>
-    <section class="hero__content">
-      <h1 class="hero__heading">Data tailored to your needs.</h1>
-      <a href="#" class="hero__cta">Learn more</a>
-      <img src="assets/images/image-hero.webp" alt="" class="hero__img">
-
-    </section>
+    <div class="wrapper">
+      <nav class="hero__nav">
+        <a href="#"><img src="assets/images/logo-light.svg" alt="Workit Logo" class="hero__logo"></a>
+        <a href="#" class="hero__apply-cta">Apply for access</a>
+      </nav>
+      <section class="hero__content">
+        <h1 class="hero__heading">Data <span>tailored</span> to your needs.</h1>
+        <a href="#" class="hero__cta">Learn more</a>
+        <img src="assets/images/image-hero.webp" alt="" class="hero__img">
+        <!-- <svg class="hero__curved-edge" aria-hidden="true" width="500" height="66" viewBox="0 0 500 80" preserveAspectRatio="none">
+          <path d="M0,0 L0,40 Q250,80 500,40 L500,0 Z" fill="none"></path>
+        </svg> -->
+      </section>
+    </div>
   </header>
 
   <main>

@@ -319,25 +319,3 @@ body {
         width: 65%;
     }
 }
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-/* @media (min-width: 1200px) { 
-    .spotlight__container {
-        flex-direction: row;
-    }
-
-    .spotlight__item {
-        flex-direction: column;
-    }
-
-    .spotlight__content {
-        text-align: center;
-    }
-
-    .founder__message {
-        width: 60%;
-        max-width: 92rem;
-        margin-top: -30rem;
-        margin-left: 40rem;
-    }
-} */

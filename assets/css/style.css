@@ -63,7 +63,7 @@ body {
     color: var(--neon-green);
 }
 .wrapper {
-    max-width: 144rem;
+    max-width: 124rem;
     padding: 3.5rem 5% 0.25rem;
     margin: 0 auto;
 }
@@ -161,12 +161,15 @@ body {
 .founder {
     padding-top: 8rem;
     padding-bottom: 4rem;
+}
+.founder__container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
 }
 .founder__img {
-    width: 100%;
-    margin-bottom: -8rem;
+    width: 85%;
+    margin-bottom: -6rem;
 }
 .founder__message {
     display: flex;
@@ -207,14 +210,6 @@ body {
     gap: 2rem;
     list-style-type: none;
 }
-/* .footer__social {
-    display: flex;
-    list-style-type: none;
-    justify-content: space-evenly;
-    margin: 0;
-    padding: 0;
-    gap: 2rem;
-} */
 
 /******************************************
 /* CURVES
@@ -248,7 +243,11 @@ body {
     body {
         font-size: 1.6rem;
     }
-
+    .hero {
+        background-image: url(../images/bg-pattern-1.svg), url(../images/bg-pattern-2.svg);
+        background-repeat: no-repeat;
+        background-position: top 15rem left -10rem, top 34rem right -4rem;
+    }
     .hero__heading {
         font-size: 6rem;
         max-width: 45rem;
@@ -264,27 +263,42 @@ body {
     }
     .spotlight__num {
         height: 4rem;
+        width: 6rem;
     }
 
+    .founder__container {
+        position: relative;
+    }
+    .founder__container::after {
+        content: url(../images/bg-pattern-3.svg);
+        position: absolute;
+        bottom: -6rem;
+        right: 5rem;
+    }
     .founder__img {
-        width: 50%;
+        align-self: flex-start;
+        width: 45%;
+        margin-bottom: -12rem;
     }
     .founder__message {
         align-items: flex-start;
-        width: 70%;
-        margin-top: -12rem;
-        margin-left: 23rem;
-    }
-    .founder__content {
+        align-self: flex-end;
+        width: 75%;
         text-align: left;
     }
+
 }
 
 @media (min-width: 1200px) { 
+
     .hero__heading {
         font-size: 8rem;
         max-width: 50rem;
         line-height: 8.7rem;
+    }
+    .spotlight {
+        padding-top: 15rem;
+        padding-bottom: 10rem;
     }
     .spotlight__container {
         flex-direction: row;
@@ -294,6 +308,15 @@ body {
     }
     .spotlight__content {
         text-align: center;
+    }
+    .spotlight__num {
+        width: 3.8rem;
+    }
+    .founder__img {
+        margin-bottom: -30rem;
+    }
+    .founder__message {
+        width: 65%;
     }
 }
 

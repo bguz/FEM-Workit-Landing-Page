@@ -1,22 +1,67 @@
-/* Variables */
 :root {
     --dark-purple: hsl(273, 85%, 13%);
     --med-purple: hsl(271, 12%, 34%);
     --light-purple: hsl(276, 100%, 99%);
     --neon-green: hsl(150, 100%, 63%);
     --white: hsl(0, 0%, 100%);
-}
-@font-face {
-    font-family: fraunces;
-    src: url(../fonts/fraunces/static/Fraunces_144pt-SemiBold.ttf) format("truetype");
-    font-weight: 600;
-    font-style: normal;
+
+    --ff-fraunces: "Fraunces", serif;
+    --ff-manrope: "Manrope", sans-serif;
+
+    --fw-fraunces-600: 600;
+    --fw-manrope-400: 400;
+    --fw-manrope-700: 700;
 }
 
-/* Box Model Hack */
-* {
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
     box-sizing: border-box;
-}
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+/* General Styles */
 html {
     font-size: 62.5%;
 }
@@ -34,27 +79,17 @@ html {
    clear: both;
 }
 
-/******************************************
-/* BASE STYLES
-/*******************************************/
-ul {
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-    padding-inline-start: 0;
-}
 body {
-    font-family: 'Manrope', sans-serif;
-    font-size: 1.5rem;
-    line-height: 3.2rem;
+    font-family: var(--ff-manrope);
+    font-size: 1.6rem;
+    line-height: 2.8rem;
 }
 .btn-primary {
     text-decoration: none;
     padding: 1.2rem 3rem;
     font-size: 1.6rem;
     color: var(--dark-purple);
-    font-weight: 700;
+    font-weight: var(--fw-manrope-700);
     background-color: var(--neon-green);
     border: 2px solid var(--neon-green);
 }
@@ -63,11 +98,10 @@ body {
     color: var(--neon-green);
 }
 .wrapper {
-    max-width: 124rem;
-    padding: 3.5rem 5% 0.25rem;
+    max-width: 1240px;
+    padding: 2.5rem 2rem 0.25rem 2rem;
     margin: 0 auto;
 }
-
 /******************************************
 /* HERO SECTION
 /*******************************************/
@@ -78,7 +112,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 .hero__logo {
     display: block;
@@ -86,7 +120,7 @@ body {
 .hero__apply-cta {
     color: var(--white);
     text-decoration: none;
-    font-weight: 700;
+    font-weight: var(--fw-manrope-700);
     border-bottom: .3rem solid var(--neon-green);
 }
 .hero__apply-cta:hover {
@@ -97,12 +131,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 3rem;
 }
 .hero__heading {
-    font-family: 'Fraunces', sans-serif;
+    font-family: var(--ff-fraunces);
     font-size: 5rem;
     line-height: 6rem;
     color: var(--white);
+    font-weight: var(--fw-fraunces-600);
     text-align: center;
     max-width: 40rem;
 }
@@ -111,18 +147,17 @@ body {
 }
 .hero__img {
     width: 90%;
-    margin-bottom: -4rem;
-    transform: translateY(6rem);
+    margin-bottom: -6rem;
+    transform: translateY(4rem);
     z-index: 2;
 }
-
 
 /******************************************
 /* SPOTLIGHT SECTION
 /*******************************************/
 
 .spotlight {
-    padding-top: 8rem;
+    padding-top: 12rem;
     padding-bottom: 4rem;
     background-color: var(--light-purple);
 }
@@ -131,11 +166,12 @@ body {
     flex-direction: column;
     list-style-type: none;
     text-align: center;
-    gap: 1.5rem;
+    gap: 3rem;
+    padding-inline-start: 0;
 }
 .spotlight__num,
 .spotlight__heading {
-    font-family: 'Fraunces', sans-serif;
+    font-family: var(--ff-fraunces);
 }
 .spotlight__num {
     font-size: 2.1rem;
@@ -146,12 +182,14 @@ body {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
 }
 .spotlight__heading {
     font-size: 2.8rem;
+    margin: 1.5rem 0;
 }
 .spotlight__description {
+    font-family: var(--ff-manrope);
     color: var(--med-purple);
 }
 
@@ -178,11 +216,12 @@ body {
     align-items: center;
     position: relative;
     background-color: var(--dark-purple);
-    padding: 3rem;
+    padding: 4rem;
+    gap: 3rem;
 }
 .founder__heading {
     font-size: 3.5rem;
-    font-family: 'Fraunces', sans-serif;
+    font-family: var(--ff-fraunces);
 }
 .founder__heading,
 .founder__message {
@@ -209,6 +248,7 @@ body {
     justify-content: space-between;
     gap: 2rem;
     list-style-type: none;
+    padding-inline-start: 0;
 }
 
 /******************************************
@@ -233,11 +273,6 @@ body {
     fill: var(--light-purple);
 }
 
-
-/******************************************
-/* MEDIA QUERIES
-/*******************************************/
-
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     body {
@@ -252,7 +287,10 @@ body {
         font-size: 6rem;
         max-width: 45rem;
     }
-
+    .hero__img {
+        margin-bottom: -13rem;
+        transform: translateY(3rem);
+    }
     .spotlight__item {
         display: flex;
         align-items: center;
@@ -297,7 +335,7 @@ body {
         line-height: 8.7rem;
     }
     .spotlight {
-        padding-top: 15rem;
+        padding-top: 20rem;
         padding-bottom: 10rem;
     }
     .spotlight__container {
@@ -308,6 +346,7 @@ body {
     }
     .spotlight__content {
         text-align: center;
+        padding-left: 0;
     }
     .spotlight__num {
         width: 3.8rem;

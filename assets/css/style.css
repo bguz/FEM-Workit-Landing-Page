@@ -50,7 +50,7 @@ body {
     color: var(--neon-green);
 }
 .wrapper {
-    max-width: 1240px;
+    max-width: 111rem;
     padding: 2.5rem 2rem 0.25rem 2rem;
     margin: 0 auto;
 }

@@ -23,7 +23,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: (https://bguz.github.io/FEM-Workit-Landing-Page/)
+- Live Site URL: (https://bguz.github.io/FEM-workit-landing-page/)
 
 ### Built with
 

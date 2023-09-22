@@ -12,12 +12,10 @@
     --fw-manrope-400: 400;
     --fw-manrope-700: 700;
 }
-
 /* General Styles */
 html {
     font-size: 62.5%;
 }
-
 /* Clear fix hack */
 .clearfix:after {
     content: ".";
